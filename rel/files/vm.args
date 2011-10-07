@@ -1,9 +1,9 @@
 
 ## Name of the node
--name metalkia_web@127.0.0.1
+-name metalkia_web@zert
 
 ## Cookie for distributed erlang
--setcookie metalkia_web
+-setcookie riak
 
 ## Heartbeat management; auto-restarts VM if it dies or becomes unresponsive
 ## (Disabled by default..use with caution!)
