@@ -1,6 +1,6 @@
 
 ## Name of the node
--name metalkia_web@zert
+-name metalkia_web@zert.local
 
 ## Cookie for distributed erlang
 -setcookie riak
