@@ -1,21 +1,13 @@
-all: site
+all: compile
 
-site-delete:
-	rm -rf site
-
-site/%:
-	mkdir -p $@
+compile:
+	rebar compile
 
 log:
 	mkdir -p $@
 
-site: site/static site/templates
-	cp -av "deps/nitrogen_core/www" "site/static/nitrogen"
-	cp -av "deps/metalkia_web_site/www/static" "site/static/metalkia"
-	cp -av "deps/metalkia_web_site/www/templates" "site/templates/metalkia"
+site-refresh: log
 
-site-refresh: site-delete site log
-
-run: site-refresh
+run:
 	cp config/app.config rel/metalkia_web/etc/app.config
 	ERL_LIBS=deps erl -args_file rel/metalkia_web/etc/vm.args -config rel/metalkia_web/etc/app.config -boot start_sasl -s mtws_app
